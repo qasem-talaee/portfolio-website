@@ -1,0 +1,9 @@
+/.vscode
+/images/*.jpg
+/images/*.png
+/images/*.JPG
+/images/*.PNG
+/images/**/*.png
+/images/**/*.jpg
+/images/**/*.PNG
+/images/**/*.JPG

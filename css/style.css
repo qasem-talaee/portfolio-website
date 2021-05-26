@@ -1,0 +1,96 @@
+@font-face {
+    font-family: Arvo;
+    src: url('fonts/Arvo-Bold.ttf');
+}
+
+body {
+    background-color: #1e1e1e;
+    color: #fff;
+    font-family: Arvo;
+    font-size: 1.1em;
+    word-spacing: 0.7em;
+}
+
+a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+input {
+    width:80%;
+    height:2em;
+    border: none;
+    color: white;
+    background-color: #3e3e3e;
+    font-family: Arvo;
+}
+
+textarea {
+    width:80%;
+    color: white;
+    border: none;
+    background-color: #3e3e3e;
+    font-family: Arvo;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.column {
+    flex: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.margin {
+    margin-left: 3em;
+}
+
+.green {
+    color: #56e370;
+}
+
+.blue {
+    color: #4280e3;
+}
+
+.white {
+    color: #fff;
+}
+
+.red {
+    color: red;
+}
+
+p > span {
+    font-size: 0.7em;
+}
+
+.date {
+    font-size: 0.7em;
+}
+
+.footer {
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7em;
+    text-align: center;
+}
+
+.heart {
+    color: rgb(255, 0, 0);
+    font-size: 1.5em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
