@@ -1,6 +1,6 @@
 <?php
 include('includes/db.php');
-$id = $_GET['id'];
+$id = test_input($_GET['id']);
 $get = "select * from blog where blog_id=$id";
 $run = mysqli_query($con, $get);
 if(mysqli_num_rows($run) == 0){
@@ -18,6 +18,12 @@ if(mysqli_num_rows($run) == 0){
     }else{
         header("Location: 404.php");
     }
+}
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
 }
 ?>
 <!DOCTYPE html>

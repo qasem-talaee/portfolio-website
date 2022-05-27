@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('includes/db.php');
 $name = $email = $msg = $msgerr = "";
 $flag = 1;
@@ -26,6 +27,14 @@ if(isset($_POST['submit'])){
         $msgerr .= '--Please enter your message--';
     }else{
         $msg = test_input($_POST['message']);
+    }
+    if(empty($_POST['cap'])){
+        $flag = 0;
+        $msgerr .= "--Please enter captcha--";
+    }
+    if($_SESSION['cap'] != test_input(strtolower($_POST['cap']))){
+        $flag = 0;
+        $msgerr .= "--Please enter captcha correct--";
     }
     if($flag == 1){
         $insert = "INSERT INTO `contact` (`con_id`, `con_name`, `con_email`, `con_message`, `con_status`, `con_date`) VALUES (NULL, '$name', '$email', '$msg', '0', NOW())";
@@ -307,6 +316,10 @@ function test_input($data) {
                         </div>
                         <div class="margin">
                             <p>-- Your Message : <textarea name="message" rows="8"><?php echo($msg); ?></textarea></p>
+                        </div>
+                        <div class="margin">
+                            <p>-- Captcha Code : <img src="includes/captcha.php" /><br /><input name="cap" type="text" value=""/></p>
+                            <span style="font-size:0.75em;">(Not sensitive to uppercase and lowercase letters)</span>
                         </div>
                         <div class="margin">
                             <p>-- <button type="submit" name="submit">Send</button></p>
